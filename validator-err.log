@@ -1,0 +1,6 @@
+error: Found argument 'Pay\test-ledger' which wasn't expected, or isn't valid in this context
+
+USAGE:
+    solana-test-validator.exe --ledger <DIR> --quiet
+
+For more information try --help

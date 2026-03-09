@@ -1,0 +1,78 @@
+[
+    {
+        "id": "mcp_1741214401001",
+        "timestamp": "2026-03-05T22:28:41Z",
+        "tool": "vanguard_pay",
+        "caller": "claude-3-opus",
+        "input": {
+            "url": "http://localhost:4402/data/premium",
+            "maxBudgetSol": 0.001
+        },
+        "result": "success",
+        "detail": "PAID 0.000001 SOL | Receipt ✓ VERIFIED | TX 5KtqVnmXrP…",
+        "solAmount": 0.000001
+    },
+    {
+        "id": "mcp_1741214365002",
+        "timestamp": "2026-03-05T22:28:05Z",
+        "tool": "vanguard_check_reputation",
+        "caller": "gpt-4o",
+        "input": {
+            "url": "https://untrusted-oracle-x402.io/data",
+            "maxBudgetSol": 0.005
+        },
+        "result": "blocked",
+        "detail": "Rep 34% | 8 flags | blacklisted"
+    },
+    {
+        "id": "mcp_1741214330003",
+        "timestamp": "2026-03-05T22:27:30Z",
+        "tool": "vanguard_pay",
+        "caller": "claude-3-sonnet",
+        "input": {
+            "url": "https://datastream-x402.io/feed",
+            "maxBudgetSol": 0.002
+        },
+        "result": "success",
+        "detail": "PAID 0.001400 SOL | 30% discount applied | TX 3MpLQwnX…",
+        "solAmount": 0.0014
+    },
+    {
+        "id": "mcp_1741214290004",
+        "timestamp": "2026-03-05T22:26:50Z",
+        "tool": "vanguard_escrow_create",
+        "caller": "gpt-4-turbo",
+        "input": {
+            "recipient": "vines1vzrY7MDu…",
+            "amountSol": 0.1,
+            "conditionType": "balance_below",
+            "thresholdSol": 1.0
+        },
+        "result": "success",
+        "detail": "Escrow initiated: 0.1 SOL if balance_below 1 SOL",
+        "solAmount": 0.1
+    },
+    {
+        "id": "mcp_1741214250005",
+        "timestamp": "2026-03-05T22:26:10Z",
+        "tool": "vanguard_pay",
+        "caller": "llama-3.2",
+        "input": {
+            "url": "https://premium-search-x402.io/query",
+            "maxBudgetSol": 0.005
+        },
+        "result": "blocked",
+        "detail": "Budget exceeded: asked 5000 lamports, max 2500 after 50% rep-discount"
+    },
+    {
+        "id": "mcp_1741214200006",
+        "timestamp": "2026-03-05T22:25:20Z",
+        "tool": "vanguard_check_reputation",
+        "caller": "gemini-1.5-pro",
+        "input": {
+            "url": "http://localhost:4402/data/premium"
+        },
+        "result": "success",
+        "detail": "Rep 92% | 0 flags | trusted"
+    }
+]

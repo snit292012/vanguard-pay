@@ -1,0 +1,31 @@
+{
+  "totalSavingsSol": 0.00253,
+  "scamsAverted": 1,
+  "vaultReverts": 0,
+  "failovers": 1,
+  "paymentsExecuted": 0,
+  "totalSpentSol": 0,
+  "roiMultiple": 0,
+  "recentEvents": [
+    {
+      "timestamp": "2026-03-09T18:59:53.425Z",
+      "type": "saving",
+      "description": "STRICT ESCROW applied — rep 61%, saved 0.002530 SOL",
+      "reputationScore": 0.61,
+      "solAmount": 0.00253
+    },
+    {
+      "timestamp": "2026-03-09T18:59:53.426Z",
+      "type": "scam_averted",
+      "description": "BLOCKED payment to blacklisted API (rep=0.34, flags=8)",
+      "reputationScore": 0.34,
+      "solAmount": 0.003
+    },
+    {
+      "timestamp": "2026-03-09T18:59:53.448Z",
+      "type": "failover",
+      "description": "Network Failover: Probe failed — fetch failed"
+    }
+  ],
+  "updatedAt": "2026-03-09T18:59:53.448Z"
+}

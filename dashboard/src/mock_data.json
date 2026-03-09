@@ -1,0 +1,159 @@
+{
+    "transactions": [
+        {
+            "id": "tx_001",
+            "timestamp": "2026-03-05T20:47:01Z",
+            "type": "x402_negotiate",
+            "status": "confirmed",
+            "from": "6NSrFp3WUAz6LST4QDgr7KG9hChmtT8xpwrnHWNmdcrs",
+            "to": "GPT4VisionAPI.solana",
+            "amountSol": 0.0012,
+            "resource": "https://api.openai-x402.io/v1/vision",
+            "description": "AI Vision Inference — auto-negotiated",
+            "x402": {
+                "originalAsk": 0.0015,
+                "counterOffer": 0.0012,
+                "negotiationRounds": 2,
+                "outcome": "accepted",
+                "paymentHeader": "X-Payment: eyJ4NDAyVmVyc2lvbiI6MSwic2NoZW1lIjoiZXhhY3QiLCJuZXR3b3JrIjoic29sYW5hLWRldm5ldCJ9",
+                "txSignature": "5KtqVnmXrPzFbB3tUJP2kdZLGsM9qwR4YhAuGb7KmNVcHpLx3DrQ"
+            }
+        },
+        {
+            "id": "tx_002",
+            "timestamp": "2026-03-05T20:47:08Z",
+            "type": "x402_autopay",
+            "status": "confirmed",
+            "from": "6NSrFp3WUAz6LST4QDgr7KG9hChmtT8xpwrnHWNmdcrs",
+            "to": "DataStream.api",
+            "amountSol": 0.0008,
+            "resource": "https://datastream-x402.io/feed/realtime",
+            "description": "Real-time market data feed — auto-paid",
+            "x402": {
+                "originalAsk": 0.0008,
+                "counterOffer": null,
+                "negotiationRounds": 1,
+                "outcome": "accepted",
+                "paymentHeader": "X-Payment: eyJ4NDAyVmVyc2lvbiI6MX0=",
+                "txSignature": "3MpLQwnXvRzFcA4sVKQ1jdYNHtrM8pwS5ZjBvGd8LmPVdIqLy2EpR"
+            }
+        },
+        {
+            "id": "tx_003",
+            "timestamp": "2026-03-05T20:47:19Z",
+            "type": "x402_negotiate",
+            "status": "rejected",
+            "from": "6NSrFp3WUAz6LST4QDgr7KG9hChmtT8xpwrnHWNmdcrs",
+            "to": "PremiumSearch.api",
+            "amountSol": 0.005,
+            "resource": "https://premium-search-x402.io/query",
+            "description": "Semantic search API — price too high, rejected",
+            "x402": {
+                "originalAsk": 0.005,
+                "counterOffer": 0.004,
+                "negotiationRounds": 3,
+                "outcome": "rejected",
+                "paymentHeader": null,
+                "txSignature": null
+            }
+        },
+        {
+            "id": "tx_004",
+            "timestamp": "2026-03-05T20:47:31Z",
+            "type": "escrow_release",
+            "status": "confirmed",
+            "from": "6NSrFp3WUAz6LST4QDgr7KG9hChmtT8xpwrnHWNmdcrs",
+            "to": "vines1vzrY7MduTBsq9jq2qSSTU59pck1f9iAYXQfXw",
+            "amountSol": 0.1,
+            "resource": null,
+            "description": "Conditional escrow released — recipient balance < 1 SOL",
+            "x402": null
+        },
+        {
+            "id": "tx_005",
+            "timestamp": "2026-03-05T20:47:44Z",
+            "type": "x402_autopay",
+            "status": "pending",
+            "from": "6NSrFp3WUAz6LST4QDgr7KG9hChmtT8xpwrnHWNmdcrs",
+            "to": "AgentLLM.api",
+            "amountSol": 0.0005,
+            "resource": "https://agent-llm-x402.io/inference",
+            "description": "LLM token inference — awaiting RPC confirmation",
+            "x402": {
+                "originalAsk": 0.0005,
+                "counterOffer": null,
+                "negotiationRounds": 1,
+                "outcome": "accepted",
+                "paymentHeader": "X-Payment: eyJ4NDAyVmVyc2lvbiI6MX0=",
+                "txSignature": null
+            }
+        }
+    ],
+    "escrow": {
+        "active": true,
+        "description": "Pay 0.1 SOL when recipient balance drops below 1 SOL",
+        "recipient": "vines1vzrY7MduTBsq9jq2qSSTU59pck1f9iAYXQfXw",
+        "amountSol": 0.1,
+        "condition": {
+            "type": "balance_below",
+            "thresholdSol": 1.0,
+            "currentBalanceSol": 0.43,
+            "satisfied": true
+        },
+        "pollCount": 4,
+        "maxWaitMs": 60000,
+        "elapsedMs": 12000
+    },
+    "rpcNodes": [
+        {
+            "id": "primary",
+            "label": "Solana Devnet",
+            "url": "https://api.devnet.solana.com",
+            "status": "degraded",
+            "latencyMs": 1420,
+            "errorRate": 0.67,
+            "lastError": "429 Too Many Requests",
+            "txProcessed": 312
+        },
+        {
+            "id": "local",
+            "label": "Local Validator",
+            "url": "http://127.0.0.1:8899",
+            "status": "online",
+            "latencyMs": 4,
+            "errorRate": 0.0,
+            "lastError": null,
+            "txProcessed": 28
+        },
+        {
+            "id": "ankr",
+            "label": "Ankr Devnet",
+            "url": "https://rpc.ankr.com/solana_devnet",
+            "status": "offline",
+            "latencyMs": null,
+            "errorRate": 1.0,
+            "lastError": "401 Unauthorized",
+            "txProcessed": 0
+        },
+        {
+            "id": "helius",
+            "label": "Helius Devnet",
+            "url": "https://devnet.helius-rpc.com",
+            "status": "online",
+            "latencyMs": 89,
+            "errorRate": 0.02,
+            "lastError": null,
+            "txProcessed": 47
+        }
+    ],
+    "agentStats": {
+        "walletAddress": "6NSrFp3WUAz6LST4QDgr7KG9hChmtT8xpwrnHWNmdcrs",
+        "balanceSol": 1.0,
+        "totalTxSent": 387,
+        "totalSolSpent": 0.3821,
+        "x402PaymentsAuto": 9,
+        "escrowsTriggered": 2,
+        "rpcFailovers": 4,
+        "uptime": "99.98%"
+    }
+}
