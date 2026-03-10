@@ -259,7 +259,7 @@ function verifyReceipt(receipt: VaultReceipt, responseBody: string): boolean {
  *   4. IF receipt verifies → release vault → seller
  *   5. IF receipt fails   → revert vault → agent wallet (atomic revert)
  */
-async function atomicVaultPayment(
+export async function atomicVaultPayment(
     conn: Connection,
     sellerAddress: string,
     lamports: number,

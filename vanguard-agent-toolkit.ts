@@ -35,7 +35,7 @@ export const vanguardPayAction: Action = {
             callback?.({ text: `🛡️ Initiating Vanguard TWE-Vault for ${budgetSol} SOL to ${sellerAddress}...` });
 
             // Note: This calls the internal agent.ts logic we already hardened
-            const result = await atomicVaultPayment(conn, targetUrl, budgetSol, sellerAddress);
+            const result = await atomicVaultPayment(conn, sellerAddress, budgetSol * 1e9, targetUrl);
 
             if (result.success) {
                 callback?.({ text: `✅ Vanguard Settlement Complete. Hash Verified. Protocol Fee Extracted.\nSignature: ${result.txSignature}` });
