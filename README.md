@@ -1,8 +1,10 @@
 <div align="center">
-  <h1>Vanguard Protocol</h1>
+  <h1>Vanguard Protocol v1.3.0</h1>
   <p><strong>Trust-Weighted Escrow (TWE) Infrastructure</strong></p>
   <p><em>Institutional Settlement for the Agent Economy — Colosseum Accelerator</em></p>
 </div>
+
+> **Vanguard Pay v1.3.0 introduces the Atomic Settlement Vault. We've implemented a 0.1% protocol fee that acts as a security premium. Agents route through our Anchor program to guarantee data integrity. If the API Oracles hallucinate, the funds revert. No trust, just math.**
 
 ---
 
