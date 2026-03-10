@@ -345,11 +345,22 @@ async function atomicVaultPayment(
         console.log(`   🔓 [Vault] Receipt valid — releasing to seller`);
         let releaseSig = "";
         try {
+            const VANGUARD_TREASURY = new PublicKey("vines1vzrY7MDu3NFWSZ2kft1D3T8iHnt2xG2ySpxiL"); // Your personal Treasury
+            const networkFee = 5000;
+            const availableAmount = vaultBalance - networkFee;
+            const protocolFee = Math.max(1, Math.floor(availableAmount * 0.001)); // 0.1% Vanguard SDK Fee
+            const sellerPayout = availableAmount - protocolFee;
+
             const releaseTx = new Transaction().add(
                 SystemProgram.transfer({
                     fromPubkey: vault.publicKey,
                     toPubkey: new PublicKey(sellerAddress),
-                    lamports: vaultBalance - 5000,
+                    lamports: sellerPayout,
+                }),
+                SystemProgram.transfer({
+                    fromPubkey: vault.publicKey,
+                    toPubkey: VANGUARD_TREASURY,
+                    lamports: protocolFee,
                 })
             );
             const { blockhash: rh } = await conn.getLatestBlockhash("confirmed");
